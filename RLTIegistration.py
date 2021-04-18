@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Feb 12 09:13:29 2018
+
+@author: Jaume Coll-Font
+"""
 # general python imports
 import os
 import sys
@@ -211,7 +217,7 @@ def register_images_RLTI( loadFolder, originalImages, referenceIX, kidneyMasks, 
     print( 'Saving images to local folder')
     fullImages = []
     if originalImages is None:
-        call(['/home/ch137122/bin/crlConvert4DToN3D','-i', loadFolder, '-o', tempDir + 'originalImg.nii.gz'])
+        call(['crlConvert4DToN3D','-i', loadFolder, '-o', tempDir + 'originalImg.nii.gz'])
         T = nib.load( loadFolder ).shape[-1]
         fullImages = [ tempDir + 'originalImg_'+str(tt).zfill(4)+'.nii.gz' for tt in range(T) ]
 
@@ -434,7 +440,7 @@ def joinImageSequence( imageSequence, joinedFile ):
     if (len(imageSequence) > 0 ):
 
         # create command recursively
-        joinCommand = ['/opt/el7/pkgs/crkit/release-current/bin/crlConvertN3DTo4D']
+        joinCommand = ['crlConvertN3DTo4D']
         for ff in imageSequence:
             joinCommand += ['-i', ff]
         joinCommand += ['-o',  joinedFile]

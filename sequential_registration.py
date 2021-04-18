@@ -1,7 +1,7 @@
 #!/usr/bin/env python2# -*- coding: utf-8 -*-
 """
 
-@author: jaume Coll-Font <jcollfont@gmail.com>
+@author: Jaume Coll-Font
 """
 
 # general python imports
@@ -174,7 +174,7 @@ def register_images2reference( loadFolder, originalImages, output_folder, refere
 def register2DImagesFrom3Dvols( inputPath, mask=None, referenceVolume=None, outputVolumePath=None, num_cores=40 ):
 
     # params
-    parFile =  'registration2/par_pairwise_DCE-ABDOMEN.txt'
+    parFile =  './par_pairwise_DCE-ABDOMEN.txt'
 
     # create temp folder
     tempDir = tempfile.mktemp() + '/'
@@ -870,7 +870,7 @@ def joinImageSequence( imageSequence, joinedFile ):
         # output_folder = os.path.dirname(imageSequence[0]) + '/'
         
         # create command recursively
-        joinCommand = ['/opt/el7/pkgs/crkit/release-current/bin/crlConvertN3DTo4D']
+        joinCommand = ['crlConvertN3DTo4D']
         for ff in imageSequence:
             joinCommand += ['-i', ff]
         joinCommand += ['-o',  joinedFile]

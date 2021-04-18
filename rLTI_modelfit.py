@@ -3,7 +3,7 @@
 """
 Created on Mon Feb 12 09:13:29 2018
 
-@author: jaume
+@author: Jaume Coll-Font
 """
 #%% IMPORTS
 # general python imports

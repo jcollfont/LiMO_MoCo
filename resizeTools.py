@@ -3,6 +3,7 @@
 """
 Created on Wed Feb  6 09:22:01 2019
 
+@author: Jaume Coll-Font
 """
 
 import os
